@@ -26,5 +26,16 @@ def mean(num_list):
     3.0
     """
     
-    ret = float(sum(num_list))/len(num_list)
+    # Check that user passes list 
+    if not isinstance(num_list, list): 
+        raise TypeError("Input must be type list")
+    
+    # Check that the list has length 
+    if len(num_list) == 0:
+        raise ZeroDivisionError("Cannot calculate mean of empty list")
+
+    try:
+        ret = float(sum(num_list))/len(num_list)
+    except TypeError:
+        raise TypeError("Values of list must be int or float")
     return ret

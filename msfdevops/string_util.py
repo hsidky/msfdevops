@@ -29,6 +29,14 @@ def title_string(s):
 	"This Is A String To Be Converted"
 	"""
 
+	# Check that input is string
+	if not isinstance(s, str):
+		raise TypeError("Input must be string")
+	
+	# Empty string 
+	if len(s) == 0:
+		raise IndexError("Cannot apply title function to empty string")
+
     ss = []
     for i, c in enumerate(s):
         nc = c
